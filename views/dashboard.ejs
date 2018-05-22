@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <!--bootstrap style-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <!--animate style-->
+    <link rel="stylesheet" type="text/css" href="css/hover-min.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <!--themify style-->
+    <link rel="stylesheet" type="text/css" href="css/themify-icons.css" />
+    <link rel="stylesheet" href="css/modal-video.min.css">
+    <!--owl carousel style-->
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/owl.theme.css" />
+    <!--fonts style style-->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/cryptocoins.css" />
+    <link rel="stylesheet" type="text/css" href="css/cryptocoins-colors.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
+    <!--bootstrap form helpers-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-formhelpers.css" />
+    <!--typography style-->
+    <link rel="stylesheet" type="text/css" href="css/typography.css" />
+    <!--basic style-->
+    <link rel="stylesheet" type="text/css" href="css/side_menu.css" />
+    <link rel="stylesheet" type="text/css" href="css/style2.css" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+  </head>
+  <body class="dashbody">
+    <div id="ui" class="ui ui-aside-compact">
+      <!--header start-->
+      <header id="header" class="ui-header">
+        <!--div class="navbar-header">
+          <a href="#" class="navbar-brand">
+            <span class="logo">
+              <img src="images/admin-logo.png" alt="admin_logo">
+            </span>
+            <span class="logo-compact">
+              <img src="images/logo_icon.png" alt="admin_logo_icon">
+            </span>
+          </a>
+        </div-->
+        <div class="navbar-collapse nav-responsive-disabled">
+          <!--ul class="nav navbar-nav">
+            <li>
+              <a class="toggle-btn" data-toggle="ui-nav" href="javascript:void(0)">
+                <i class="ti-menu"></i>
+              </a>
+            </li>
+          </ul-->
+          <div class="admin_title">
+            <h3 class="text-white-title">Arteryex Dashboard </h3>
+          </div>
+          <div class="admin_user_right">
+            <div class="text-white-title">
+                <% if (typeof user !== 'undefined') { %>
+                  Welcome <%= user.user_name %>
+              <% } %>
+              <br>
+              <button style="width: 100%; background-color: white;border: none;"> <a href="/logout">logout</a></button>
+            </div>
+        </div>
+      </header>
+      <!--header end-->
+      <div id="content" class="ui-content ui-content-aside-overlay">
+        <div class="ui-content-body">
+          <div class="ui-container">
+            <div class="admin_body ">
+              <div class="row">
+                <div class="color-wrap">
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="info-bar mt-30 mb-20">
+                    <div class="info-left">
+                      <h4 class="text-white fw-4  mb-10">Estimate amount of Gobal Coin tokens:</h4>
+                      <small class="text-white fw-3">Including Bonus</small>
+                    </div>
+                    <div class="info-right">
+                      <small class=" theme-color1 fw-3  mb-10 text-right">Including Bonus</small>
+                      <h3 class="text-white">$ 235.21457895</h3>
+                    </div>
+                  </div>
+                  <div class="info-left">
+                    <span class="theme-color fw-3">Current Bonus: 15%</span>
+                  </div>
+                  <div class="info-right">
+                    <span class="theme-color text-right">Next Bonus Shift: 11D 12H 43M 10s</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-7 mt-20 mb-10">
+                  <h2 class="theme-color mb-20">Detail</h2>
+                  <ul class="wallet-details">
+                    <form action="/dashboard" method="POST">
+                      <li class="theme-color1">
+                        <h6>
+                          <i class="cc ETH"></i>Your Etherum wallet
+                        </h6>
+                        <input type="text" class="wallet-form" name="wallet" id="wallet" value= <%= user.wallet %> >
+                        <div class="dw">
+                          <button type="submit" class="btn regist-btn">Edit wallet</button>
+                        </div>
+                      </li>
+                    </form>
+                    <h2 class="theme-color mb-20">Buy Token</h2>
+                    <li class="theme-color1">
+                      <span class="text-white">Rate: 1AXC = 0.0001ETH</span>
+                    </li>
+                    <li>
+                      <span class="text-white">Adress: 0x17b79de089b1e3793ffab74f553531464f6b102d</span>
+                    </li>
+                    <% if (typeof amount !== 'undefined') { %>
+                      <p class="error"><%= amount %></p>
+                  <% } %>
+                  </ul>
+                  <div class="admin-btn">
+                    <a class="btn regist-btn mr-10" href="">Buy AXC</a>
+                  </div>
+                     
+                </div>
+                <div class="col-md-5 mt-20 mb-10">
+                  <h2 class="theme-color mb-20">
+                    Identification</h2>
+                    <% if (typeof savedid !== 'undefined') { %>
+                      <p class="error"><%= savedid %></p>
+                  <% } %>
+                    <form action="/identification" method="POST">
+                      <div class="form-group">
+                        <label for="firstname">Firstname</label>
+                        <input type="text" class="form-control id-input" name="firstname" placeholder="firstname">
+                      </div>
+                      <div class="form-group">
+                        <label for="lastname">Lastname</label>
+                        <input type="text" class="form-control id-input" name="lastname" placeholder="lastname">
+                      </div>
+                      <div class="form-group">
+                        <label for="file">input your Identification</label>
+                        <input type="file" name="id_image">
+                      </div>
+                      <div class="check">
+                        <label>
+                          <input type="checkbox"> Check
+                        </label>
+                      </div>
+                      <div class="admin-btn">
+                        <button type="submit" class="btn regist-btn">Validate</button>
+                      </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/side_menu.js"></script>
+</html>

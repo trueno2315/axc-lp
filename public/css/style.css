@@ -1,0 +1,526 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*reset css*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6, p, ul {
+	padding: 0;
+}
+a {
+	text-decoration: none !important;
+}
+select {
+	appearance: none !important;
+	-moz-appearance: none !important;
+	-webkit-appearance: none !important;
+	border: none !important;
+	transition: .3s;
+}
+select:active, select:focus {
+	border-radius: 0;
+	transition: .3s;
+}
+input[type="submit"] {
+	border: none;
+}
+
+
+/*------header----------*/
+
+
+body {
+	width: 100%;
+
+}
+/*------Menu----------*/
+.navbar {
+	border: 1px solid transparent;
+	margin-bottom: 0;
+	min-height: inherit;
+	position: relative;
+}
+.navbar-nav {
+  float: left;
+  margin: 12px 0;
+}
+.navbar-nav > li {
+  margin: 0 7px;
+}
+.navbar-nav > li > a {
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+.navbar-header h4 {
+	display: none;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #000;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 5px 3px;
+}
+.navbar-nav > li {
+
+}
+
+.navbar-nav > li:last-child::after {
+	display: none;
+}
+
+.navbar-nav > li:hover {
+	border-bottom: 2px solid #071445;
+}
+.navbar-nav > li:last-child {
+	margin-right: 0;
+}
+.navbar-inverse {
+	background-color: transparent;
+	border: medium none;
+	border-radius: 0;
+}
+.navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
+	color: #071445;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border-color: #071445;
+}
+#clockdiv li span {
+  color: #000;
+  font-family: soolidium;
+  font-size: 67px;
+  margin: 0 25px;
+}
+#clockdiv li small {
+  bottom: 14px;
+  color: #000;
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+  position: relative;
+  text-transform: uppercase;
+}
+#clockdiv li {
+	list-style-type: none;
+	display: inline-block;
+	padding: 0 10px;
+	position: relative;
+}
+#clockdiv li::after {
+  color: #000;
+  content: ":";
+  font-family: soolidium;
+  font-size: 58px;
+  position: absolute;
+  right: -7px;
+  top: 2px;
+}
+#clockdiv li:last-child::after {
+  content: inherit;
+  display: none;
+}
+
+.crypt-det li {
+  background: rgba(0, 0, 0, 0) url("../images/digital-bg.jpg") no-repeat scroll 0 0;
+  display: inline-block;
+  height: 147px;
+  list-style-type: none;
+  margin: 0 8px;
+  text-align: center;
+  width: 18%;
+}
+.crypt-det small {
+  font-size: 15px;
+}
+
+.crypt-det li span i {
+  background-color: #000;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 38px;
+  height: 69px;
+  line-height: 64px;
+  margin: 10px 0;
+  width: 69px;
+}
+.crypt-det h4 {
+  margin: 0;
+}
+
+
+.crypt-det li span.btc i{  background-color: #f99300;}
+
+.crypt-det li span.eth i{  background-color: #62688f;}
+
+.crypt-det li span.ltc i{  background-color: #aeaeae;}
+
+.crypt-det li span.dash i{  background-color: #1d75bd;}
+
+.crypt-det li span.mon i{  background-color: #f0780a;}
+
+.ico-partner li {
+  display: inline-block;
+  margin: 0 -8px;
+}
+
+.banner-info {
+  margin-bottom: 40px;
+  margin-top: 130px;
+  position: relative;
+}
+header {
+  left: 0;
+  margin: 0 auto;
+  padding: 20px 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+}
+.logo-bg {
+  float: left;
+  margin-bottom: 10px;
+}
+
+
+.unique-btn {
+  background-color: #133fde;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 7px 15px;
+}
+
+
+
+.unique-btn:hover {
+  background-color: #ffffff;
+
+  color: #000;
+
+}
+.head_right a {
+  margin: 0 10px;
+}
+
+.head_right {
+  float: right;
+  margin-right: 90px;
+}
+
+
+.head_left {
+  margin-left: 60px;
+}
+.banner-btn {
+  margin: 20px 0;
+  padding-bottom: 40px;
+}
+
+.pad-content {
+  padding: 0 150px;
+}
+
+
+
+.token-info {
+  background-color: #ffffff;
+  padding: 15px 20px;
+-webkit-box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.16);
+-moz-box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.16);
+box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.16);
+}
+.token-info li {
+  font-size: 17px;
+  list-style-type: none;
+  margin: 6px 0;
+}
+
+.token-allocate li {
+  font-size: 22px;
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+.token-allocate li.color1{ color:#fc6901;}
+.token-allocate li.color2{ color:#f6761c;}
+.token-allocate li.color3{ color:#7f8c8d;}
+.token-allocate li.color4{ color:#95a5a6;}
+.token-allocate li.color5{ color:#bdc3c7;}
+.token-allocate li.color6{ color:#34495e;}
+
+
+
+.token-allocate small {
+  color: #bdc3c7;
+}
+
+.token-info, .token-allocate {
+  margin: 40px 0;
+}
+
+.team-info {
+  border: 1px solid #cfcfcf;
+  font-family: montserrat;
+  padding: 20px 0;
+  text-align: center;
+  -webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+margin: 10px 0;
+}
+.team-info h6 {
+  margin-bottom: 0;
+}
+.team-info span {
+  color: #cccccc;
+  font-size: 15px;
+}
+.team-info ul {
+  margin: 10px 0;
+}
+.team-info li {
+  display: inline-block;
+  list-style-type: none;
+}
+.team-info li a {
+  background-color: #fc6901;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  padding: 3px 8px;
+}
+.team-info img {
+  margin-bottom: 20px;
+  -webkit-border-radius: 50%;
+-moz-border-radius: 50%;
+border-radius: 50%;
+}
+.footer-social li {
+  display: inline-block;
+  list-style-type: none;
+}
+.footer-social li a {
+  color: #fff;
+  font-size: 22px;
+  margin: 0 10px;
+}
+.footer-left {
+  text-align: left;
+}
+
+.footer-right {
+  float: right;
+  text-align: left;
+}
+
+
+.footer-mid span a {
+  background-color: #eec58c;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 15px;
+  -webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+  
+}
+
+
+.footer-mid span a:hover {
+	  background-color: #d65b06;
+}
+
+
+.footer-mid {
+  margin: 40px 0 0;
+}
+ .footer-right {
+  margin: 20px 0;
+}
+
+.rm-block {
+  background-color: #ede2b6;
+  -webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+border-radius: 2px;
+  display: inline-block;
+  text-align: center;
+  width: 150px;
+  position: relative;	
+}
+
+
+.rm-block p {
+  background-color: #34495e;
+padding: 15px 5px;
+  -webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+border-radius: 2px;
+margin: 0;
+}
+.rm-line {
+  margin: 10px 0 20px;
+}
+.rm-block-plain {
+  display: inline-block;
+  width: 15%;
+}
+
+.rm-block-bot {
+  margin-top: -90px;
+}
+
+.rm-block h6 {
+  margin: 5px 0;
+}
+
+
+.rm-block-top .rm-block::after {
+  border-color: #ede2b6 transparent transparent;
+  border-style: solid;
+  border-width: 10px 10px 0;
+  bottom: -8px;
+  content: "";
+  height: 0;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  width: 0;
+}
+
+.rm-block-bot .rm-block::after {
+	
+	width: 0;
+height: 0;
+border-style: solid;
+border-width: 0 10px 10px 10px;
+border-color: transparent transparent #ede2b6 transparent;
+
+
+  content: "";
+
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: -8px;
+
+}
+
+
+.rm-block-bot .rm-block::after {
+
+
+
+}
+
+.banner-btn .btn {
+  margin: 0 5px;
+}
+
+.form-title span {
+  font-size: 17px;
+  font-weight: 600;
+}
+.form-input {
+  margin: 10px 0;
+  position: relative;z-index: 2;
+}
+.form-right h2 {
+  font-family: roboto;
+  font-size: 39px;
+  font-weight: 100;
+}
+.form-input .form-ico {
+  background-color: #ede2b6;
+  border-radius: 50%;
+  bottom: 0;
+  margin: auto;
+  padding: 5px 8px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  width: 31px;
+  height: 27px;
+  padding: 7px 0;text-align: center;
+}
+
+
+.form-right #clockdiv li span {
+
+  font-size: 54px;margin: 0 15px;
+
+}
+
+.form-right #clockdiv li::after {
+
+  font-size: 38px;
+
+}
+
+.banner-btn small {
+  display: block;
+  margin-bottom: 7px;
+}
+
+.regist-btn {
+  background-color: #133fde;
+  color: white;
+}
+
+.form-copy{
+	  background-color:#133fde;
+	-webkit-border-bottom-right-radius: 20px;
+-webkit-border-bottom-left-radius: 20px;
+-moz-border-radius-bottomright: 20px;
+-moz-border-radius-bottomleft: 20px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 20px;
+position:relative;margin-top: -50px;
+	}
+	
+	
+.form-copy::after {
+  /*background: transparent url("../images/form-bottom.png") no-repeat scroll 0 0;*/
+  bottom: 0;
+  content: "";
+  height: 64px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: -63px;
+  width: 100%;
+}
+	
+  .ico-large{ 
+  height: 30px;
+  }
+	
+	.ico-large img {
+  float: right;
+  position: relative;
+  z-index: 2;
+}
+.login-logo {
+  position: absolute;
+  right: 0;
+  bottom: -30px;
+}	.login-copy {
+  margin-top: 0;
+}
+
+input {
+  cursor: inherit;  
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  background-color: #c7bff8 !important;
+  background-image: none !important;
+  color: rgb(0, 0, 0) !important;
+}
+
+	
