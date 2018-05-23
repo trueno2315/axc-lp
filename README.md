@@ -5,11 +5,20 @@ nodemon node-test
 ※データベースをインストールし、テーブルを用意しないと
 ログインや登録機能は動きません
 
+=============================================================
+事前準備
+
 #mysqlのインストール
 brew install mysql
 
 #mysqlの起動
 mysql.server start
+
+#sqlクライアントのインストール
+https://www.sequelpro.com/
+
+#DBを作る
+create db db_name
 
 #usersテーブルの作成
 CREATE TABLE `users` (
