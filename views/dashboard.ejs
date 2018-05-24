@@ -124,11 +124,11 @@
                      
                 </div>
                 <div class="col-md-5 mt-20 mb-10">
-                  <h2 class="theme-color mb-20">
-                    Identification</h2>
+                  <h2 class="theme-color mb-20">Identification</h2>
+                  <% if ( user.kyc == 0 ) { %>
                     <% if (typeof savedid !== 'undefined') { %>
                       <p class="error"><%= savedid %></p>
-                  <% } %>
+                    <% } else { %>
                     <form action="/identification" method="POST" enctype="multipart/form-data">
                       <div class="form-group">
                         <label for="firstname">Firstname</label>
@@ -151,6 +151,12 @@
                         <button type="submit" class="btn regist-btn">Validate</button>
                       </div>
                     </form>
+                    <% } %>
+                  <% } else if ( user.kyc == 1 ){ %>
+                    <p class="error">認証中です</p>
+                  <% } else {%>
+                    <p class="error">承認済みです</p>
+                  <% } %>
                 </div>
               </div>
             </div>
