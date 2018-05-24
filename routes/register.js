@@ -3,8 +3,33 @@ var router = express.Router();
 var moment = require('moment');
 var crypto = require("crypto");
 var connection = require('../mysqlConnection');
+var nodemailer    = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
+var transporter = nodemailer.createTransport( smtpTransport({
+    host : 'arteryex.sakura.ne.jp',
+    port : 587,
+    auth : {
+        user : 'info@arteryex.biz', // メールアドレス
+        pass : 'arteryex2018' // メールアドレスパスワード
+    }
+}));
+
+var mailOptions = {
+    from    : 'info@arteryex.biz', // 送信元アドレス
+    to      : 'xxxx@bbbbbb', // 送信するアドレス
+    subject : 'KMH', // タイトル
+    text    : '今日はマッサージの日！'
+};
 
 router.get('/', function(req, res, next) {
+  //メール送信コマンド
+  transporter.sendMail( mailOptions, function( error, info ){
+    if( error ){
+        return console.log( error );
+    }
+    console.log('Message sent: ' + info.response);
+});
+
   res.render('register', {
     title: 'Register'
   });
