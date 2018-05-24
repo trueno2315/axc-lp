@@ -129,7 +129,7 @@
                     <% if (typeof savedid !== 'undefined') { %>
                       <p class="error"><%= savedid %></p>
                   <% } %>
-                    <form action="/identification" method="POST">
+                    <form action="/identification" method="POST" enctype="multipart/form-data">
                       <div class="form-group">
                         <label for="firstname">Firstname</label>
                         <input type="text" class="form-control id-input" name="firstname" placeholder="firstname">
