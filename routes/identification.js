@@ -22,13 +22,12 @@ router.post('/', upload.any(), function(req, res, next) {
     var idImage = req.body.firstname + req.body.lastname + String(req.session.user_id);
     var userId = req.session.user_id;
     var savedId = "本人確認を実施しました"
-    console.log(req.body)
-    console.log(req.files)
-    var updateidQuery  = 'UPDATE users SET firstname = "' + firstName + '",  lastname = "' + lastName + '", id_image= "' + idImage + '" where user_id = ' + userId + '';
+    var updateidQuery  = 'UPDATE users SET firstname = "' + firstName + '",lastname = "' + lastName + '", id_image= "' + idImage + '",kyc = 1 where user_id = ' + userId + '';
     connection.query(updateidQuery, function(err, rows) {
       console.log(updateidQuery);
+      console.log(err);
+      console.log(rows);
         res.render('dashboard', {
-            title: 'dashboard',
             savedid: savedId
           });
     });
