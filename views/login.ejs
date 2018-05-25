@@ -51,6 +51,9 @@
                     <% if (typeof registed !== 'undefined') { %>
                       <p class="error"><%= registed %></p>
                     <% } %>
+                    <% if (typeof preregisted !== 'undefined') { %>
+                      <p class="error"><%= preregisted %></p>
+                    <% } %>
                   </div>
                   <div class="form-input">
                     <input type="email" name="email" placeholder="Enter Your email" required />

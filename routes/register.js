@@ -68,7 +68,9 @@ router.post('/', function(req, res, next) {
         });
           console.log(registerQuery);
 
-          res.redirect('/login');
+          res.render('login', {
+            preregisted: 'メールに添付しているURLからアクセスして本登録を完了してください'
+          });
         });
       }
     });
