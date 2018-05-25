@@ -44,10 +44,13 @@
                     <!--span class="text-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span-->
                     <% if (typeof noUser !== 'undefined') { %>
                       <p class="error"><%= noUser %></p>
-                  <% } %>
-                  <% if (typeof amount !== 'undefined') { %>
-                    <p class="error"><%= amount %></p>
-                <% } %>
+                    <% } %>
+                    <% if (typeof amount !== 'undefined') { %>
+                      <p class="error"><%= amount %></p>
+                    <% } %>
+                    <% if (typeof registed !== 'undefined') { %>
+                      <p class="error"><%= registed %></p>
+                    <% } %>
                   </div>
                   <div class="form-input">
                     <input type="email" name="email" placeholder="Enter Your email" required />

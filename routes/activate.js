@@ -26,7 +26,7 @@ router.get('/', function(req, res, next) {
       console.log(activateQuery);
       connection.query(activateQuery, function(err, rows) {
         res.render('login', {
-          title : 'login'
+          registed: "本登録を完了しました"
         });
       });
     }
