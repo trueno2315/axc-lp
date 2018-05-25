@@ -20,6 +20,7 @@ router.get('/', function(req, res, next) {
       console.log("errormsg=");
       console.log(errormsg);
       res.render('error', {
+        errormsg: "仮登録がされていません"
         });
     } else {
       console.log(activateQuery);
