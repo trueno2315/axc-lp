@@ -114,12 +114,17 @@
                     <li>
                       <span class="text-white">Adress: 0x17b79de089b1e3793ffab74f553531464f6b102d</span>
                     </li>
-                    <% if (typeof amount !== 'undefined') { %>
-                      <p class="error"><%= amount %></p>
-                  <% } %>
+                    <h2 class="theme-color mb-20">Your Token Amount</h2>
+                    <li class="theme-color1">
+                      <span class="text-white">Amount: 
+                      <% if (typeof amount !== 'undefined') { %>
+                        <%= amount %>
+                      <% } %> AXC
+                    </span>    
+                    </li>
                   </ul>
                   <div class="admin-btn">
-                    <a class="btn regist-btn mr-10" href="">Buy AXC</a>
+                    <a class="btn regist-btn mr-10" href="/sendether">Check AXC</a>
                   </div>
                 </div>
                 <div class="col-md-5 mt-20 mb-10">
