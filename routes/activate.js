@@ -9,13 +9,26 @@ var smtpTransport = require('nodemailer-smtp-transport');
 router.get('/', function(req, res, next) {
   //activeフラグ変更
   console.log(req.query);
-  userID = req.query.userID;
-  var activateQuery = 'UPDATE users SET active = 1 where user_id = ' + userID + ';'
-  connection.query(activateQuery, function(err, rows) {
-    console.log(err);
-  });
-  res.render('login', {
-    title: "login"
+  var activeHash = req.query.activeHash;
+  var activateQuery = 'UPDATE users SET active = "1" where active = "' + activeHash + '"';//where activeHashに書き換え
+  //hashが存在するかどうかの確認
+  var userExistsQuery = 'SELECT * FROM users WHERE active = "' + activeHash + '" LIMIT 1';
+
+  connection.query(userExistsQuery, function(err, email) {
+    var errormsg = email.length === 0;
+    if (errormsg) {
+      console.log("errormsg=");
+      console.log(errormsg);
+      res.render('error', {
+        });
+    } else {
+      console.log(activateQuery);
+      connection.query(activateQuery, function(err, rows) {
+        res.render('login', {
+          title : 'login'
+        });
+      });
+    }
   });
 });
 

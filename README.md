@@ -21,6 +21,7 @@ https://www.sequelpro.com/
 create db db_name
 
 #usersテーブルの作成
+
 CREATE TABLE `users` (
   `user_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_name` varchar(255) DEFAULT NULL,
@@ -29,8 +30,10 @@ CREATE TABLE `users` (
   `wallet` varchar(255) DEFAULT NULL,
   `firstname` varchar(255) DEFAULT NULL,
   `lastname` varchar(255) DEFAULT NULL,
-  `id_image` blob,
+  `id_image` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `token` varchar(255) DEFAULT NULL,
+  `kyc` int(11) DEFAULT '0',
+  `active` varchar(255) DEFAULT '0',
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
