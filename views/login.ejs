@@ -34,7 +34,7 @@
       <div class="container">
         <div class="row">
           <a href="">
-            <img alt="logo" class="img-responsive center-block mb-20 top-logo" src="images/arteryex.png">
+            <img alt="logo" class="img-responsive center-block mb-20 top-logo" src="images/axc/logo.axc.png">
           </a>
           <form action="/login" method="post">
             <div class="form-bg-img clearfix">
@@ -77,8 +77,9 @@
           </form>
             <div class="col-md-6">
               <div class="form-right text-center">
-                <h2 class="mt-20 mb-40 fw-3">The first crypto assets for
-                  <br />medical ico exchange
+                <h2 class="mt-20 mb-40 fw-3">Asian Medical<br />
+                    Information Exchange<br />
+                    Blockchain ICO
                 </h2>
                 <h4 class="fw-6 text-black mb-20">Token Sale Finishes In:</h4>
                 <div id="clockdiv" class="clock_counter_main clearfix">
@@ -160,7 +161,8 @@
         var timeinterval = setInterval(updateClock, 1000);
     }
 
-    var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+    //var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+    var deadline = new Date(Date.parse(new Date(2018,8,1) ));
     initializeClock('clockdiv', deadline);
 </script>
   <script src="js/bootstrap.min.js"></script>
