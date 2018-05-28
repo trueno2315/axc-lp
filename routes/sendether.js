@@ -3,6 +3,7 @@ var router = express.Router();
 var moment = require('moment'); 
 var Web3 = require('web3');
 var BigNumber = require('bignumber.js');
+var connection = require('../mysqlConnection');
 const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 
 var abi=[
@@ -489,33 +490,33 @@ var abi=[
 ];
 
 router.get('/', function(req, res, next) {
-    //var web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
-    //web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545'));
-    var AXCToken = web3.eth.contract(abi).at("0x875e7ede8a48694069a71e31fa5989f80c7edc1d");
-    web3.eth.getAccounts(function(error, result) {
-        if(error != null){
-            console.log("Couldn't get accounts");
-            console.log(result); //logs all accounts
-            console.log(result[3]); //logs 3rd account
-        } else {
-            var account = result[0];
-            AXCToken.balanceOf(account, function(error, result) {
-                if(error != null){
-                    console.log(error);
-                } else {
-                    var Amount = new BigNumber(result);
-                    var okValue1 = Amount.round(2).toNumber();
-                    console.log("okValue1");
-                    console.log(okValue1);
-                    res.render('dashboard', {
-                        amount: okValue1
-                    });
-                }
-            });
-        }
-    });
-
+  //var web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
+  //web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545'));
+  var AXCToken = web3.eth.contract(abi).at("0x3bd6902bdc276c675bfdd2324d434319ca440ecd");
+  var userId = req.session.user_id;
+  console.log(userId);
+  //wallet情報をDBから取得する
+  var query = 'SELECT wallet FROM users WHERE user_id = ' + userId;
+  connection.query(query, function(err, account) {
+    var wallet = account[0].wallet;
+    if (!err) {
+      AXCToken.balanceOf(wallet, function(error, result) {
+          if(error != null){
+              console.log(error);
+          } else {
+              var Amount = new BigNumber(result);
+              var okValue1 = Amount.round().toFixed();
+              var amount = okValue1 / 1000000000000000000;
+              console.log("okValue1");
+              console.log(amount);
+              res.render('dashboard', {
+                  amount: amount
+              });
+          }
+      });
+    }
   });
+});
 
   
   module.exports = router;
