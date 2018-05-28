@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var connection = require('../mysqlConnection');
-
 const multer = require('multer');
 const multerStorage = multer.diskStorage({
 destination (req, file, cb) {

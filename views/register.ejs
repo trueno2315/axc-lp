@@ -44,7 +44,7 @@
                   <span class="text-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                   <% if (typeof errormsg !== 'undefined') { %>
                     <p class="error"><%= errormsg %></p>
-                <% } %>
+                  <% } %>
                 </div>
                 <div class="form-input">
                   <input type="text" name="user_name" placeholder="Enter Your Username" required/>
@@ -146,12 +146,10 @@
 
         function updateClock() {
             var t = getTimeRemaining(endtime);
-
             daysSpan.innerHTML = t.days;
             hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
             minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
             secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
             if (t.total <= 0) {
                 clearInterval(timeinterval);
             }

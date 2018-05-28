@@ -1,22 +1,23 @@
 var createError = require('http-errors');
 var express = require('express');
-var engine = require('ejs-locals'); 
+var engine = require('ejs-locals');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-var session = require('express-session'); 
+var session = require('express-session');
 var web3 = require('web3');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var boards = require('./routes/dashboard');
-var deposit = require('./routes/deposit'); 
+var deposit = require('./routes/deposit');
 var transaction = require('./routes/transaction');
 var register = require('./routes/register');
 var login = require('./routes/login');
-var identification = require('./routes/identification')
-var sendether = require('./routes/sendether')
+var identification = require('./routes/identification');
+var sendether = require('./routes/sendether');
+var activate = require('./routes/activate');
 var logout = require('./routes/logout');
 
 
@@ -44,13 +45,14 @@ app.use(session({
 
 app.use('/', setUser, indexRouter);
 app.use('/users', usersRouter);
-app.use('/dashboard', setUser, boards); 
-app.use('/register', register); 
-app.use('/login', login); 
-app.use('/transaction', transaction); 
-app.use('/identification', setUser, identification); 
-app.use('/logout', logout); 
-app.use('/sendether', setUser, sendether); 
+app.use('/dashboard', setUser, boards);
+app.use('/register', register);
+app.use('/login', login);
+app.use('/transaction', transaction);
+app.use('/identification', setUser, identification);
+app.use('/logout', logout);
+app.use('/sendether', setUser, sendether);
+app.use('/activate', activate);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

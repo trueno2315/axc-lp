@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title>login</title>
     <!--bootstrap style-->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <!--animate style-->
@@ -44,10 +44,16 @@
                     <!--span class="text-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span-->
                     <% if (typeof noUser !== 'undefined') { %>
                       <p class="error"><%= noUser %></p>
-                  <% } %>
-                  <% if (typeof amount !== 'undefined') { %>
-                    <p class="error"><%= amount %></p>
-                <% } %>
+                    <% } %>
+                    <% if (typeof amount !== 'undefined') { %>
+                      <p class="error"><%= amount %></p>
+                    <% } %>
+                    <% if (typeof registed !== 'undefined') { %>
+                      <p class="error"><%= registed %></p>
+                    <% } %>
+                    <% if (typeof preregisted !== 'undefined') { %>
+                      <p class="error"><%= preregisted %></p>
+                    <% } %>
                   </div>
                   <div class="form-input">
                     <input type="email" name="email" placeholder="Enter Your email" required />
