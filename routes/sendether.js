@@ -489,10 +489,12 @@ var abi=[
   }
 ];
 
+var crowdsaleABI = [ { "constant": true, "inputs": [], "name": "hasClosed", "outputs": [ { "name": "", "type": "bool" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "rate", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "cap", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "goal", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "weiRaised", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "closingTime", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [], "name": "finalize", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "capReached", "outputs": [ { "name": "", "type": "bool" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "wallet", "outputs": [ { "name": "", "type": "address" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "goalReached", "outputs": [ { "name": "", "type": "bool" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "isFinalized", "outputs": [ { "name": "", "type": "bool" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "owner", "outputs": [ { "name": "", "type": "address" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [], "name": "claimRefund", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "openingTime", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_beneficiary", "type": "address" } ], "name": "buyTokens", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function" }, { "constant": false, "inputs": [ { "name": "newOwner", "type": "address" } ], "name": "transferOwnership", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "vault", "outputs": [ { "name": "", "type": "address" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "token", "outputs": [ { "name": "", "type": "address" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "inputs": [ { "name": "_openingTime", "type": "uint256" }, { "name": "_closingTime", "type": "uint256" }, { "name": "_rate", "type": "uint256" }, { "name": "_goal", "type": "uint256" }, { "name": "_wallet", "type": "address" }, { "name": "_cap", "type": "uint256" }, { "name": "_token", "type": "address" } ], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "payable": true, "stateMutability": "payable", "type": "fallback" }, { "anonymous": false, "inputs": [], "name": "Finalized", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": true, "name": "previousOwner", "type": "address" }, { "indexed": true, "name": "newOwner", "type": "address" } ], "name": "OwnershipTransferred", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": true, "name": "purchaser", "type": "address" }, { "indexed": true, "name": "beneficiary", "type": "address" }, { "indexed": false, "name": "value", "type": "uint256" }, { "indexed": false, "name": "amount", "type": "uint256" } ], "name": "TokenPurchase", "type": "event" }, { "constant": false, "inputs": [ { "name": "team", "type": "address" }, { "name": "reserve", "type": "address" } ], "name": "MintForAlloc", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" } ] 
+
 router.get('/', function(req, res, next) {
   //var web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
   //web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545'));
-  var AXCToken = web3.eth.contract(abi).at("0x3bd6902bdc276c675bfdd2324d434319ca440ecd");
+  var AXCToken = web3.eth.contract(abi).at("0x875e7ede8a48694069a71e31fa5989f80c7edc1d");
   var userId = req.session.user_id;
   console.log(userId);
   //wallet情報をDBから取得する
@@ -505,7 +507,7 @@ router.get('/', function(req, res, next) {
               console.log(error);
           } else {
               var Amount = new BigNumber(result);
-              var okValue1 = Amount.round().toFixed();
+              var okValue1 = Amount.round(18).toFixed();
               var amount = okValue1 / 1000000000000000000;
               console.log("okValue1");
               console.log(amount);
@@ -517,6 +519,31 @@ router.get('/', function(req, res, next) {
     }
   });
 });
+
+router.get('/refund', function(req, res, next) {
+  var AXCCrowdsale = web3.eth.contract(crowdsaleABI).at("0x56909a9daecac95bcdfaf92bf11dffee7c4017cd");
+  var userId = req.session.user_id;
+  console.log(userId);
+  //wallet情報をDBから取得する
+  var query = 'SELECT wallet FROM users WHERE user_id = ' + userId;
+  connection.query(query, function(err, account) {
+    var wallet = account[0].wallet;
+    if (!err) {
+      AXCCrowdsale.claimRefund({from: wallet}, function(error, result) {
+          if(error != null){
+              console.log(error);
+          } else {
+              console.log(result);
+              res.render('error',{
+                errormsg: "返金の要件を満たしていない、もしくはすでに返金がなされています。"
+              });
+          };
+      });
+    };
+  });
+});
+
+
 
   
   module.exports = router;
