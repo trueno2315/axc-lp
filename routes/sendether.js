@@ -532,10 +532,13 @@ router.get('/refund', function(req, res, next) {
       AXCCrowdsale.claimRefund({from: wallet}, function(error, result) {
           if(error != null){
               console.log(error);
+              res.render('error',{
+                errormsg: "返金の要件を満たしていません。"
+              });
           } else {
               console.log(result);
               res.render('error',{
-                errormsg: "返金の要件を満たしていない、もしくはすでに返金がなされています。"
+                errormsg: "walletを確認して下さい。"
               });
           };
       });
