@@ -76,12 +76,14 @@
                 <div class="col-xs-12">
                   <div class="info-bar mt-30 mb-20">
                     <div class="info-left">
-                      <h4 class="text-white fw-4  mb-10">Estimate amount of Gobal Coin tokens:</h4>
-                      <small class="text-white fw-3">Including Bonus</small>
+                      <h3 class="text-white fw-4  mb-10">TotalSupply of AXC </h3>
+                      <small class="text-white fw-3"></small>
                     </div>
                     <div class="info-right">
-                      <small class=" theme-color1 fw-3  mb-10 text-right">Including Bonus</small>
-                      <h3 class="text-white">$ 235.21457895</h3>
+                      <small class=" theme-color1 fw-3  mb-10 text-right"></small>
+                      <h3 class="text-white"><% if (typeof totalSupply !== 'undefined') { %>
+                      <%= totalSupply %><% } %> AXC
+                      </h3>
                     </div>
                   </div>
                   <div class="info-left">
@@ -94,37 +96,36 @@
               </div>
               <div class="row">
                 <div class="col-md-7 mt-20 mb-10">
-                  <h2 class="theme-color mb-20">Detail</h2>
                   <ul class="wallet-details">
-                    <form action="/dashboard" method="POST">
-                      <li class="theme-color1">
-                        <h6>
-                          <i class="cc ETH"></i>Your Etherum wallet
-                        </h6>
-                        <input type="text" class="wallet-form" name="wallet" id="wallet" value= <%= user.wallet %> >
-                        <div class="dw">
-                          <button type="submit" class="btn regist-btn">Edit wallet</button>
-                        </div>
-                      </li>
-                    </form>
-                    <h2 class="theme-color mb-20">Buy Token</h2>
+                     <h2 class="theme-color mb-20">Token Info</h2>
                     <li class="theme-color1">
                       <span class="text-white">Rate: 1ETH = 12000AXC</span>
                     </li>
                     <li>
                       <span class="text-white">Adress: 0x17b79de089b1e3793ffab74f553531464f6b102d</span>
                     </li>
-                    <h2 class="theme-color mb-20">Your Token Amount</h2>
+                    <h2 class="theme-color mb-20">Your Info</h2>
+                    <form action="/dashboard" method="POST">
+                      <li class="theme-color1">
+                        <h6>
+                          <i class="cc ETH"></i><span class="text-white">Your Ether Wallet</span>
+                        </h6>
+                        <input type="text" class="wallet-form" name="wallet" id="wallet" value= <%= user.wallet %> >
+                        <div class="dw">
+                          <button type="submit" class="btn regist-btn">Register/Edit</button>
+                        </div>
+                      </li>
+                    </form>
                     <li class="theme-color1">
-                      <span class="text-white">Amount: 
+                      <span class="text-white"> Your Token Amount:
                       <% if (typeof amount !== 'undefined') { %>
                         <%= amount %>
                       <% } %> AXC
-                      </span>    
+                      </span>
                     </li>
                   </ul>
                   <div class="admin-btn">
-                    <a class="btn regist-btn mr-10" href="/sendether/refund">Claim Refund</a>
+                    <a class="btn regist-btn mr-10">Claim Refund</a>
                   </div>
                   <div class="admin-btn">
                     <a class="btn regist-btn mr-10" href="/sendether">Check Amount</a>
