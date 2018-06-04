@@ -467,12 +467,25 @@ border-color: transparent transparent #ede2b6 transparent;
 }
 
 .regist-btn {
-  background-color: #133fde;
-  color: white;
-}
+  /*  background-color: #133fde;
+    color: white; */
+    width: 200px;
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: white;
+    background: #43178a;
+    transition: .4s;
+  }
+  .regist-btn:hover {
+    background: #ECECEC;
+    color: #000;
+  }
 
 .form-copy{
-	  background-color:#133fde;
+	  background-color: #43178a;
 	-webkit-border-bottom-right-radius: 20px;
 -webkit-border-bottom-left-radius: 20px;
 -moz-border-radius-bottomright: 20px;
@@ -526,5 +539,6 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 .wp-icon{
   height: 160px;
 }
+
 
 	

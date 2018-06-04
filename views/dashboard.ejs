@@ -29,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="css/side_menu.css" />
     <link rel="stylesheet" type="text/css" href="css/style2.css" />
     <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   </head>
   <body class="dashbody">
     <div id="ui" class="ui ui-aside-compact">
@@ -56,13 +57,7 @@
             <h3 class="text-white-title">Arteryex Dashboard </h3>
           </div>
           <div class="admin_user_right">
-            <div class="text-white-title">
-                <% if (typeof user !== 'undefined') { %>
-                  Welcome <%= user.user_name %>
-              <% } %>
-              <br>
-              <button style="width: 100%; background-color: white;border: none;"> <a href="/logout">logout</a></button>
-            </div>
+            <button class="logout"> <a href="/logout">logout</a></button>
         </div>
       </header>
       <!--header end-->
@@ -75,16 +70,9 @@
               <div class="row">
                 <div class="col-xs-12">
                   <div class="info-bar mt-30 mb-20">
-                    <div class="info-left">
-                      <h3 class="text-white fw-4  mb-10">TotalSupply of AXC </h3>
-                      <small class="text-white fw-3"></small>
-                    </div>
-                    <div class="info-right">
-                      <small class=" theme-color1 fw-3  mb-10 text-right"></small>
-                      <h3 class="text-white"><% if (typeof totalSupply !== 'undefined') { %>
-                      <%= totalSupply %><% } %> AXC
-                      </h3>
-                    </div>
+                      <div class="w3-light-grey">
+                        <div class="w3-container w3-green w3-center" style="width:25%">25%</div>
+                      </div>
                   </div>
                   <div class="info-left">
                     <span class="theme-color fw-3">Current Bonus: 15%</span>
@@ -97,41 +85,53 @@
               <div class="row">
                 <div class="col-md-7 mt-20 mb-10">
                   <ul class="wallet-details">
-                     <h2 class="theme-color mb-20">Token Info</h2>
-                    <li class="theme-color1">
-                      <span class="text-white">Rate: 1ETH = 12000AXC</span>
-                    </li>
-                    <li>
-                      <span class="text-white">Adress: 0x17b79de089b1e3793ffab74f553531464f6b102d</span>
-                    </li>
-                    <h2 class="theme-color mb-20">Your Info</h2>
-                    <form action="/dashboard" method="POST">
+                    <div class="dashboard-space1">
+                      <h2 class="theme-color mb-20">Token Info</h2>
                       <li class="theme-color1">
-                        <h6>
-                          <i class="cc ETH"></i><span class="text-white">Your Ether Wallet</span>
-                        </h6>
-                        <input type="text" class="wallet-form" name="wallet" id="wallet" value= <%= user.wallet %> >
-                        <div class="dw">
-                          <button type="submit" class="btn regist-btn">Register/Edit</button>
-                        </div>
+                        <span class="text-white">Rate: 1ETH = 12000AXC</span>
                       </li>
-                    </form>
-                    <li class="theme-color1">
-                      <span class="text-white"> Your Token Amount:
-                      <% if (typeof amount !== 'undefined') { %>
-                        <%= amount %>
-                      <% } %> AXC
-                      </span>
-                    </li>
+                      <li>
+                        <span class="text-white">Adress: 0x17b79de089b1e3793ffab74f553531464f6b102d</span>
+                      </li>
+                    </div>
+
+                    <div class="dashboard-space1">
+                      <h2 class="theme-color mb-20">Your Info</h2>
+                      <form action="/dashboard" method="POST">
+                        <li class="theme-color1">
+                          <h6>
+                            <i class="cc ETH"></i><span class="text-white">Your Ether Wallet</span>
+                          </h6>
+                          <input type="text" class="wallet-form" name="wallet" id="wallet" value= <%= user.wallet %> >
+                          <div class="dw">
+                            <button type="submit" class="btn regist-wallet-btn"><i class="fa fa-caret-right"></i>Register/Edit</button>
+                          </div>
+                        </li>
+                      </form>
+                      <form action="/sendether" method="POST">
+                        <li class="theme-color1">
+                            <span class="text-white"> Your Token Amount:
+                            <% if (typeof amount !== 'undefined') { %>
+                              <%= amount %>
+                            <% } %> AXC
+                            </span>
+                        </li>
+                        <div class="dw">
+                          <button type="submit" class="btn ck-amount-btn"><i class="fa fa-caret-right"></i>Check Amount</button>
+                        </div>
+                      </form>
+                      <!--form action="/sendether" method="POST"-->
+                        <li class="theme-color1">
+                            <span class="text-white"> Refund Your Token
+                            </span>
+                        </li>
+                        <button type="submit" class="btn refund-btn">Refund</button>
+                      <!--/form-->
+                    </div>
                   </ul>
-                  <div class="admin-btn">
-                    <a class="btn regist-btn mr-10">Claim Refund</a>
-                  </div>
-                  <div class="admin-btn">
-                    <a class="btn regist-btn mr-10" href="/sendether">Check Amount</a>
-                  </div>
                 </div>
                 <div class="col-md-5 mt-20 mb-10">
+                  <div class="dashboard-space1">
                   <h2 class="theme-color mb-20">Identification</h2>
                   <% if ( user.kyc == 0 ) { %>
                     <% if (typeof savedid !== 'undefined') { %>
@@ -156,7 +156,7 @@
                         </label>
                       </div>
                       <div class="admin-btn">
-                        <button type="submit" class="btn regist-btn">Validate</button>
+                        <button type="submit" class="btn validate-btn">Validate</button>
                       </div>
                     </form>
                     <% } %>
@@ -165,6 +165,7 @@
                   <% } else {%>
                     <p class="error">承認済みです</p>
                   <% } %>
+                </div>
                 </div>
               </div>
             </div>

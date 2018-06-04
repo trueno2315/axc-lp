@@ -63,8 +63,7 @@ body{}
     width: 100%;
     height: 56px;
     z-index: 100;
-    background-color:#133fde;
-    /*background: url("../images/header_bg.jpg") no-repeat scroll 0 0 / cover;*/
+    background: url("../images/axc/img-bg3.axc.png") no-repeat scroll 0 0 / cover;
 }
 
 
@@ -725,7 +724,7 @@ body {
 body {
     font-size: 14px;
     color: #626262;
-    /*background: url(../images/admin_bg.jpg) no-repeat center fixed;*/
+    background: url(../images/axc/img-bg-backup.axc.png) no-repeat center fixed;
 	background-size:cover;
     -webkit-font-smoothing: antialiased;
     line-height: 1.5;

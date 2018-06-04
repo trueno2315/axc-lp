@@ -214,7 +214,7 @@ box-shadow: 0px 0px 46px 5px rgba(0,0,0,0.17);
 .wallet-details span {
   font-size: 19px;
   font-weight: 300;
-  margin: 0 20px;
+  margin: 0 0px;
 }
 .green {
   color: #1eab6a;
@@ -390,8 +390,99 @@ border-radius: 10px;
   color: white;
 }
 
+.regist-wallet-btn {
+/*  background-color: #133fde;
+  color: white; */
+  width: 200px;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #000;
+  background: #ECECEC;
+  transition: .4s;
+}
+.regist-wallet-btn:hover {
+  background: #43178a;
+  color: white;
+}
+
+.ck-amount-btn {
+  background-color: #133fde;
+  color: white;
+  width: 200px;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #000;
+  background: #ECECEC;
+  transition: .4s;
+}
+.ck-amount-btn:hover {
+  background: #43178a;
+  color: white;
+}
+
+
+.refund-btn {
+  background-color: #d1d2d6;
+  color: white;
+  width: 200px;
+  background-color: #133fde;
+  color: white;
+  width: 200px;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: rgb(190, 190, 190);
+  background: #ECECEC;
+  transition: .4s;
+}
+
 .admin-btn{
-  float: right;
+  position: relative;
+  text-align: center;
+}
+
+.validate-btn{
+  width: 200px;
+  background-color: #133fde;
+  color: white;
+  width: 200px;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  background: #8277c9;
+  transition: .4s;
+}
+.validate-btn:hover {
+  background: #43178a;
+  color: white;
+}
+
+.logout{
+  display: inline-block;
+  text-decoration: none;
+  color: #8177c9;
+  width: 100px;
+  height: 40px;
+  border: double 4px #8177c9;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  transition: .6s;
+}
+.logout:hover{
+  -webkit-transform: rotateY(360deg);
+  -ms-transform: rotateY(360deg);
+  transform: rotateY(360deg);
 }
 
 .wallet-form{
@@ -401,9 +492,20 @@ border-radius: 10px;
   color: black !important;
   font-size: 19px !important;
   font-weight: 300 !important;
-  margin: 0 20px !important;
+  margin: 0 0px !important;
 }
 
+
+
+.dashboard-space1 {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  color: #6091d3;/*文字色*/
+  background: #FFF;
+  border: solid 3px #6091d3;/*線*/
+  border-radius: 10px;/*角の丸み*/
+}
 
 
 

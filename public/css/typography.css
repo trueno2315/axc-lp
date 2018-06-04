@@ -206,7 +206,7 @@ Page section margin padding
 border-top-left-radius: 20px;
 border-top-right-radius: 20px;
 }
-.form-bg{background: transparent url("../images/form-bg.jpg") no-repeat scroll 0 0 / cover;}
+.form-bg{background: transparent url("../images/axc/img-bg-backup.axc.png") no-repeat scroll 0 0 / cover;}
 
 /*************************
     Text color
@@ -216,7 +216,8 @@ border-top-right-radius: 20px;
 
 .theme-color1 { color: #181819 }
 .text-white { color: #181819 }
-.text-white-title { color: #ffffff }
+.text-footer { color: #fff }
+.text-white-title { color: #ffffff; margin:5px;}
 .text-black { color: #0e1017; }
 .text-gray { color: #9595a0; }
 .text-gray1 { color: #7b818d; }
