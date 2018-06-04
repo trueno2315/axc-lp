@@ -42,21 +42,21 @@ router.post('/', function(req, res, next) {
     var mailOptions = {
     from    : 'info@arteryex.biz', // 送信元アドレス
     to      : req.body.email, // 送信するアドレス
-    subject : 'KMH', // タイトル
-    text    : '本登録を完了させてください\nhttp://localhost:3000/activate?activeHash='+ emailHash +''
+    subject : 'Arteryex ICO', // タイトル
+    text    : 'This is pre-Registration.\nPlease complete Registration via URL below\nhttp://localhost:3000/activate?activeHash='+ emailHash +''
     };
     connection.query(emailExistsQuery, function(err, email) {
       var errormsg = email.length === 1;
       if (errormsg) {
         res.render('register', {
           title: 'Register',
-          errormsg: '既に登録されているメールアドレスです'
+          errormsg: 'This email is already used.'
         });
       } else if (password != repassword) {
         var diffpass = 1;
         res.render('register', {
           title: 'Register',
-          errormsg: '入力しているパスワードが異なります'
+          errormsg: 'Password you typed is incorrect.'
         });
       }else {
         connection.query(registerQuery, function(err, rows) {
@@ -69,7 +69,7 @@ router.post('/', function(req, res, next) {
           console.log(registerQuery);
 
           res.render('login', {
-            preregisted: 'メールに添付しているURLからアクセスして本登録を完了してください'
+            preregisted: 'We emailed you a URL.\nPlease complete registration via URL.'
           });
         });
       }

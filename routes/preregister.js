@@ -42,13 +42,13 @@ router.post('/', function(req, res, next) {
       if (errormsg) {
         res.render('register', {
           title: 'Register',
-          errormsg: '既に登録されているメールアドレスです'
+          errormsg: 'This email is already used.'
         });
       } else if (password != repassword) {
         var diffpass = 1;
         res.render('register', {
           title: 'Register',
-          errormsg: '入力しているパスワードが異なります'
+          errormsg: 'Password you typed is incorrect.'
         });
       }else {
         connection.query(registerQuery, function(err, rows) {

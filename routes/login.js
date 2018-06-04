@@ -30,7 +30,7 @@ router.post('/', function(req, res, next) {
     } else {
       res.render('login', {
         title: 'ログイン',
-        noUser: 'メールアドレスとパスワードが一致するユーザーはいません'
+        noUser: 'There are no users that match these.'
       });
     }
   });
