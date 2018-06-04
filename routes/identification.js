@@ -20,7 +20,7 @@ router.post('/', upload.any(), function(req, res, next) {
     var firstName = req.body.firstname;
     var idImage = req.body.firstname + req.body.lastname + String(req.session.user_id);
     var userId = req.session.user_id;
-    var savedId = "本人確認を実施しました"
+    var savedId = "Identification Complete."
     var updateidQuery  = 'UPDATE users SET firstname = "' + firstName + '",lastname = "' + lastName + '", id_image= "' + idImage + '",kyc = 1 where user_id = ' + userId + '';
     connection.query(updateidQuery, function(err, rows) {
       console.log(updateidQuery);

@@ -20,13 +20,13 @@ router.get('/', function(req, res, next) {
       console.log("errormsg=");
       console.log(errormsg);
       res.render('error', {
-        errormsg: "仮登録がされていません"
+        errormsg: "You haven't pre-Registered yet."
         });
     } else {
       console.log(activateQuery);
       connection.query(activateQuery, function(err, rows) {
         res.render('login', {
-          registed: "本登録を完了しました"
+          registed: "Registration Complete."
         });
       });
     }
