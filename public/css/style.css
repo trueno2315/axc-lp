@@ -168,7 +168,7 @@ body {
 
 .banner-info {
   margin-bottom: 40px;
-  margin-top: 130px;
+  margin-top: 200px;
   position: relative;
 }
 header {
@@ -207,8 +207,7 @@ header {
 }
 
 .head_right {
-  float: right;
-  margin-right: 90px;
+  
 }
 
 
