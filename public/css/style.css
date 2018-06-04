@@ -186,7 +186,7 @@ header {
 
 
 .unique-btn {
-  background-color: #133fde;
+  background-color: #43178a;
   border-radius: 30px;
   color: #fff;
   font-size: 17px;
@@ -243,8 +243,8 @@ box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.16);
   list-style-type: none;
   margin-bottom: 10px;
 }
-.token-allocate li.color1{ color:#133fde;}
-.token-allocate li.color2{ color:#133fde;}
+.token-allocate li.color1{ color:#43178a;}
+.token-allocate li.color2{ color:#43178a;}
 .token-allocate li.color3{ color:#7f8c8d;}
 .token-allocate li.color4{ color:#95a5a6;}
 .token-allocate li.color5{ color:#bdc3c7;}
@@ -285,7 +285,7 @@ margin: 10px 0;
   list-style-type: none;
 }
 .team-info li a {
-  background-color: #133fde;
+  background-color: #43178a;
   border-radius: 5px;
   color: #fff;
   font-size: 16px;
@@ -317,7 +317,7 @@ border-radius: 50%;
 
 
 .footer-mid span a {
-  background-color: #133fde;
+  background-color: #43178a;
   color: #fff;
   font-size: 18px;
   padding: 10px 15px;
@@ -467,7 +467,7 @@ border-color: transparent transparent #ede2b6 transparent;
 }
 
 .regist-btn {
-  /*  background-color: #133fde;
+  /*  background-color: #43178a;
     color: white; */
     width: 200px;
     position: relative;

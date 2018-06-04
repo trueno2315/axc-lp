@@ -87,9 +87,9 @@ ul { margin: 0px; padding: 0px; }
 p { font-weight: normal; line-height: 22px; color: #8a8a8a; font-family: 'Roboto', sans-serif;font-size:15px;}
 hr { margin: 0; padding: 0px; border-bottom:1px dashed #d1d1d8; border-top: 0px;  } 
 
-*::-moz-selection { background: #133fde; color: #fff; text-shadow: none; }
-::-moz-selection { background: #133fde; color: #fff; text-shadow: none; }
-::selection { background: #133fde; color: #fff; text-shadow: none; }
+*::-moz-selection { background: #43178a; color: #fff; text-shadow: none; }
+::-moz-selection { background: #43178a; color: #fff; text-shadow: none; }
+::selection { background: #43178a; color: #fff; text-shadow: none; }
 sub, sup {
 
   margin: 0 4px;
@@ -212,7 +212,7 @@ border-top-right-radius: 20px;
     Text color
 *************************/
 /*.theme-color { color: #ff6901!important; }*/
-.theme-color { color: #133fde!important }
+.theme-color { color: #43178a!important }
 
 .theme-color1 { color: #181819 }
 .text-white { color: #181819 }
@@ -488,14 +488,14 @@ border-radius:2px;
 
 .btn-default:hover, .btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default.focus:active, .btn-default:active:focus, .btn-default:active:hover, .open > .dropdown-toggle.btn-default.focus, .open > .dropdown-toggle.btn-default:focus, .open > .dropdown-toggle.btn-default:hover {
 
-background: #133fde;
-background: -moz-linear-gradient(top, #133fde 0%, #0b39df 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, #133fde), color-stop(100%, #0b39df));
-background: -webkit-linear-gradient(top, #133fde 0%, #0b39df 100%);
-background: -o-linear-gradient(top, #133fde 0%, #0b39df 100%);
-background: -ms-linear-gradient(top, #133fde 0%, #0b39df 100%);
-background: linear-gradient(to bottom, #133fde 0%, #0b39df 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#133fde', endColorstr='#ff7801', GradientType=0 );
+background: #43178a;
+background: -moz-linear-gradient(top, #43178a 0%, #43178a 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, #43178a), color-stop(100%, #43178a));
+background: -webkit-linear-gradient(top, #43178a 0%, #43178a 100%);
+background: -o-linear-gradient(top, #43178a 0%, #43178a 100%);
+background: -ms-linear-gradient(top, #43178a 0%, #43178a 100%);
+background: linear-gradient(to bottom, #43178a 0%, #43178a 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43178a', endColorstr='#ff7801', GradientType=0 );
 
 
    color: #fff;
@@ -504,14 +504,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#133fde', end
 
 .btn-primary {
 
-background: #133fde;
-background: -moz-linear-gradient(top, #133fde 0%, #0b39df 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, #133fde), color-stop(100%, #0b39df));
-background: -webkit-linear-gradient(top, #133fde 0%, #0b39df 100%);
-background: -o-linear-gradient(top, #133fde 0%, #0b39df 100%);
-background: -ms-linear-gradient(top, #133fde 0%, #0b39df 100%);
-background: linear-gradient(to bottom, #133fde 0%, #0b39df 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#133fde', endColorstr='#ff7801', GradientType=0 );
+background: #43178a;
+background: -moz-linear-gradient(top, #43178a 0%, #43178a 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, #43178a), color-stop(100%, #43178a));
+background: -webkit-linear-gradient(top, #43178a 0%, #43178a 100%);
+background: -o-linear-gradient(top, #43178a 0%, #43178a 100%);
+background: -ms-linear-gradient(top, #43178a 0%, #43178a 100%);
+background: linear-gradient(to bottom, #43178a 0%, #43178a 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43178a', endColorstr='#ff7801', GradientType=0 );
 
 color: #ffffff;
 
@@ -530,7 +530,7 @@ color: #ffffff;
 
 
 input[type="text"], input[type="email"], input[type="password"] {
-  background-color: #133fde;
+  background-color: #43178a;
   border: medium none;
   -webkit-border-radius: 30px;
 -moz-border-radius: 30px;

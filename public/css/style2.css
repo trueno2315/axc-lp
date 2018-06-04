@@ -367,7 +367,7 @@ border-radius: 10px;
   text-transform: capitalize;
 }
 .bc input[type="text"], .bc input[type="email"], .bc input[type="password"] {
-  background-color: #133fde;
+  background-color: #43178a;
   padding-left: 20px; padding-right:60px;
 }
 .wallet_balance label {
@@ -386,12 +386,12 @@ border-radius: 10px;
 }
 
 .regist-btn {
-  background-color: #133fde;
+  background-color: #43178a;
   color: white;
 }
 
 .regist-wallet-btn {
-/*  background-color: #133fde;
+/*  background-color: #43178a;
   color: white; */
   width: 200px;
   position: relative;
@@ -409,7 +409,7 @@ border-radius: 10px;
 }
 
 .ck-amount-btn {
-  background-color: #133fde;
+  background-color: #43178a;
   color: white;
   width: 200px;
   position: relative;
@@ -431,7 +431,7 @@ border-radius: 10px;
   background-color: #d1d2d6;
   color: white;
   width: 200px;
-  background-color: #133fde;
+  background-color: #43178a;
   color: white;
   width: 200px;
   position: relative;
@@ -451,7 +451,7 @@ border-radius: 10px;
 
 .validate-btn{
   width: 200px;
-  background-color: #133fde;
+  background-color: #43178a;
   color: white;
   width: 200px;
   position: relative;
