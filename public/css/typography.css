@@ -530,7 +530,7 @@ color: #ffffff;
 
 
 input[type="text"], input[type="email"], input[type="password"] {
-  background-color: #43178a;
+  background-color: #fff;
   border: medium none;
   -webkit-border-radius: 30px;
 -moz-border-radius: 30px;

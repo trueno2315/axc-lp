@@ -483,6 +483,7 @@ border-radius: 10px;
   -webkit-transform: rotateY(360deg);
   -ms-transform: rotateY(360deg);
   transform: rotateY(360deg);
+  color: #000;
 }
 
 .wallet-form{
