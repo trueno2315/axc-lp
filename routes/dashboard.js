@@ -490,22 +490,22 @@ var abi=[
 
   router.get('/', function(req, res, next) {
     if (req.session.user_id) {
-      var AXCToken = web3.eth.contract(abi).at("0x875e7ede8a48694069a71e31fa5989f80c7edc1d");
+    //  var AXCToken = web3.eth.contract(abi).at("0x875e7ede8a48694069a71e31fa5989f80c7edc1d");
       var userId=req.session.user_id;
       var query='SELECT user_name from users where user_id = "' + userId + '" ';
       connection.query(query, function(err, user_name) {
         //sessionにユーザーIDが残っていればdashboardへ飛ぶ
-          AXCToken.totalSupply(function(error, result) {
-          console.log(result);
-          var Amount = new BigNumber(result);
-          var okValue1 = Amount.round(18).toFixed();
-          var amount = okValue1 / 1000000000000000000;
+        //  AXCToken.totalSupply(function(error, result) {
+        //  console.log(result);
+        //  var Amount = new BigNumber(result);
+        //  var okValue1 = Amount.round(18).toFixed();
+        //  var amount = okValue1 / 1000000000000000000;
           res.render('dashboard', {
             title: 'dashboard',
             userName: user_name,
-            totalSupply: amount
+      //      totalSupply: amount
           });
-        });
+      //  });
       });
     }else {
       res.render('login', {
