@@ -45,7 +45,7 @@ body {
 }
 .navbar-nav {
   float: left;
-  margin: 12px 0;
+  margin: 25px 20px;
 }
 .navbar-nav > li {
   margin: 0 7px;
@@ -244,8 +244,8 @@ box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.16);
   list-style-type: none;
   margin-bottom: 10px;
 }
-.token-allocate li.color1{ color:#fc6901;}
-.token-allocate li.color2{ color:#f6761c;}
+.token-allocate li.color1{ color:#133fde;}
+.token-allocate li.color2{ color:#133fde;}
 .token-allocate li.color3{ color:#7f8c8d;}
 .token-allocate li.color4{ color:#95a5a6;}
 .token-allocate li.color5{ color:#bdc3c7;}
@@ -286,7 +286,7 @@ margin: 10px 0;
   list-style-type: none;
 }
 .team-info li a {
-  background-color: #fc6901;
+  background-color: #133fde;
   border-radius: 5px;
   color: #fff;
   font-size: 16px;
@@ -318,7 +318,7 @@ border-radius: 50%;
 
 
 .footer-mid span a {
-  background-color: #eec58c;
+  background-color: #133fde;
   color: #fff;
   font-size: 18px;
   padding: 10px 15px;
@@ -330,7 +330,7 @@ border-radius: 5px;
 
 
 .footer-mid span a:hover {
-	  background-color: #d65b06;
+	  background-color: #0d0579;
 }
 
 
@@ -521,6 +521,11 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
   background-color: #c7bff8 !important;
   background-image: none !important;
   color: rgb(0, 0, 0) !important;
+}
+
+
+.wp-icon{
+  height: 160px;
 }
 
 	

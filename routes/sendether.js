@@ -502,6 +502,9 @@ router.get('/', function(req, res, next) {
             AXCToken.balanceOf(account, function(error, result) {
                 if(error != null){
                     console.log(error);
+                    res.render('error', {
+                      errormsg: error
+                    });
                 } else {
                     var Amount = new BigNumber(result);
                     var okValue1 = Amount.round(2).toNumber();
