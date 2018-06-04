@@ -522,7 +522,6 @@ router.get('/', function(req, res, next) {
     }
   });
 });
-
 router.get('/refund', function(req, res, next) {
   var AXCCrowdsale = web3.eth.contract(crowdsaleABI).at("0x56909a9daecac95bcdfaf92bf11dffee7c4017cd");
   var userId = req.session.user_id;
