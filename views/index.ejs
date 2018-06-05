@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><%= title %></title>
 
+<!--parallax-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/parallax.min.js"></script>
+
 <!--bootstrap style-->
 
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"  />
@@ -49,7 +53,7 @@
 <header>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-md-12">
         <div class="head_left">
           <div class="logo-bg"> <a href="/"><img alt="logo" class="img-responsive logo index-logo" src="images/axc/logo.axc.png"> </a> </div>
           <nav class="navbar navbar-inverse">
@@ -59,12 +63,12 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav">
-                <li><a href="#">Team </a></li>
-                <li><a href="#">Whitepaper </a></li>
-                <li><a href="#">News </a></li>
-                <li><a href="#">Events </a></li>
-                <li><a href="#">Careers </a></li>
-                <li><a href="#">Contact </a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Whitepaper">Whitepaper</a></li>
+                <li><a href="#Token">Token</a></li>
+                <li><a href="Roadmap">Roadmap</a></li>
+                <li><a href="#Partner">Partner</a></li>
+                <li><a href="#Team">Team</a></li>
               </ul>
             </div>
           </nav>
@@ -77,7 +81,7 @@
     </div>
   </div>
 </header>
-<section class="img-bg text-center" >
+<section id="Top" class="img-bg text-center parallax-window" data-parallax="scroll" data-image-src="images/axc/top.axc.png" >
   <div class="container">
     <div class="row">
       <div class="banner-info">
@@ -94,12 +98,12 @@
             <li><span class="seconds"></span><small>seconds</small></li>
           </ul>
         </div>
-        <div class="banner-btn"> <a href="" class="btn regist-btn">Read Our whitepaper</a></div>
+        <div class="banner-btn"> <a href="wp/AXC_whitepaper_ver1.0.pdf" class="btn regist-btn">Read Our whitepaper</a></div>
       </div>
     </div>
   </div>
 </section>
-<section class="text-center page-section-ptb" >
+<section id="About" class="text-center page-section-ptb" >
   <div class="container">
     <div class="row">
       <div class="title mt-10 mb-10">
@@ -138,7 +142,7 @@
     </div>
   </div>
 </section>
-<section class="img-bg2 page-section-ptb" >
+<section id="Whitepaper" class="img-bg2 page-section-ptb" >
   <div class="container">
     <div class="row">
       <div class="pages-sec">
@@ -155,7 +159,7 @@
     </div>
   </div>
 </section>
-<section class="page-section-ptb" >
+<section id="Token" class="page-section-ptb" >
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
@@ -194,7 +198,7 @@
     </div>
   </div>
 </section>
-<section class="text-center page-section-ptb" >
+<section id="Roadmap" class="text-center page-section-ptb" >
     <div class="container">
       <div class="row">
         <div class="title mt-10 mb-10">
@@ -204,7 +208,7 @@
       </div>
     </div>
   </section>
-<section class="page-section-1-ptb theme-bgcolor1 " >
+<section id="Partner" class="page-section-1-ptb theme-bgcolor1 " >
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
@@ -227,7 +231,7 @@
     </div>
   </div>
 </section>
-<section class="page-section-1-ptb w360">
+<section id="Team" class="page-section-1-ptb w360">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
