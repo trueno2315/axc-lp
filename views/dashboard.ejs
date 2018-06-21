@@ -91,7 +91,15 @@
                         <span class="text-white">Rate: 1ETH = 12000AXC</span>
                       </li>
                       <li>
-                        <span class="text-white">Adress: 0x17b79de089b1e3793ffab74f553531464f6b102d</span>
+                        <span class="text-white">
+                        <% if(user.kyc === 0){ %>
+                          Address: "Identification First"
+                        <% } else if(user.kyc === 1){ %>
+                          Address: "Please wait until Identification is complete"
+                        <% } else { %>
+                          Address: 0x17b79de089b1e3793ffab74f553531464f6b102d
+                        <% } %>
+                        </span>
                       </li>
                     </div>
 
@@ -122,7 +130,7 @@
                       </form>
                       <!--form action="/sendether" method="POST"-->
                         <li class="theme-color1">
-                            <span class="text-white"> Refund Your Token
+                            <span class="text-white"> Claim Refund 
                             </span>
                         </li>
                         <button type="submit" class="btn refund-btn">Refund</button>
@@ -161,9 +169,9 @@
                     </form>
                     <% } %>
                   <% } else if ( user.kyc == 1 ){ %>
-                    <p class="error">認証中です</p>
+                    <p class="error">Checking...</p>
                   <% } else {%>
-                    <p class="error">承認済みです</p>
+                    <p class="error">Authenticated</p>
                   <% } %>
                 </div>
                 </div>
