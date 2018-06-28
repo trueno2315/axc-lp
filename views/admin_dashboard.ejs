@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin dashboard</title>
+    <!--bootstrap style-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <!--animate style-->
+    <link rel="stylesheet" type="text/css" href="css/hover-min.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <!--themify style-->
+    <link rel="stylesheet" type="text/css" href="css/themify-icons.css" />
+    <link rel="stylesheet" href="css/modal-video.min.css">
+    <!--owl carousel style-->
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/owl.theme.css" />
+    <!--fonts style style-->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/cryptofont.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
+    <!--bootstrap form helpers-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-formhelpers.css" />
+    <!--typography style-->
+    <link rel="stylesheet" type="text/css" href="css/typography.css" />
+    <!--basic style-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+  </head>
+    <body>
+      <h1>Hello Admin!</h1>
+      <% if (typeof result !== 'undefined') { %>
+      <h2><%= result %></h2>
+      <% } %>
+
+      <% if (typeof unVerifiedLists !== 'undefined') { %>
+      <h1>未承認リスト(<%= unVerifiedLists.length %> 件)</h1>
+      <% } %>
+        <ul>
+            <% if (typeof unVerifiedLists !== 'undefined') { %>
+              <% for( var i in unVerifiedLists){ %>
+              <li style="font-size: 30px">
+                <%= unVerifiedLists[i].firstname %>
+                <%= unVerifiedLists[i].lastname %>
+                <img src="../upload/tmp/<%= unVerifiedLists[i].id_image %>"/> <br/>
+                <form action="/admin_dashboard" method="post">
+                  <input name="id" value="<%= unVerifiedLists[i].user_id %>"/>
+                  <input name="email" value="<%= unVerifiedLists[i].email %>"/>
+                  <input type="submit" value="承認" style="font-size: 20px" />
+                  <input name="deny" type="submit" value="deny"/>
+                </form>
+              </li>
+              <% } %>
+            <% } %>
+        </ul>
+    </body>
+  </html>

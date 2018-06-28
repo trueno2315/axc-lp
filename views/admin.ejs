@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <!--bootstrap style-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <!--animate style-->
+    <link rel="stylesheet" type="text/css" href="css/hover-min.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <!--themify style-->
+    <link rel="stylesheet" type="text/css" href="css/themify-icons.css" />
+    <link rel="stylesheet" href="css/modal-video.min.css">
+    <!--owl carousel style-->
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/owl.theme.css" />
+    <!--fonts style style-->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/cryptofont.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
+    <!--bootstrap form helpers-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-formhelpers.css" />
+    <!--typography style-->
+    <link rel="stylesheet" type="text/css" href="css/typography.css" />
+    <!--basic style-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+  </head>
+  <body>
+    <div class="form-wrapper form-bg page-section-1-ptb">
+      <section class=" page-section-1-ptb" >
+      <div class="container">
+        <div class="row">
+          <a href="/">
+            <img alt="logo" class="img-responsive center-block mb-20 top-logo" src="images/axc/logo.axc.png">
+          </a>
+          <form action="/admin" method="post">
+            <div class="form-bg-img clearfix">
+                <div class="col-md-5">
+                  <div class="form-title mb-30">
+                    <h2 class="m theme-color">Admin</h2>
+                  </div>
+                  <div class="form-input">
+                    <input type="password" name="password" placeholder="Enter Your Password" required />
+                    <span class="form-ico">
+                      <i class="fa fa-clone"></i>
+                    </span>
+                  </div>
+                  <div class="form-input text-center">
+                    <input class="btn btn-default" type="submit" style="font-size: 23px"  value="Enter"/>
+                  </div>
+                </div>
+          </form>
+            <div class="col-md-7">
+              <div class="form-right text-center">
+                <h2 class="mt-20 mb-40 fw-3">Asian Medical<br />
+                    Information Exchange<br />
+                    Blockchain ICO
+                </h2>
+                <h4 class="fw-6 text-black mb-20">Token Sale Finishes In:</h4>
+                <div id="clockdiv" class="clock_counter_main clearfix">
+                  <ul>
+                    <li>
+                      <span class="days"></span>
+                      <small>Days</small>
+                    </li>
+                    <li>
+                      <span class="hours"></span>
+                      <small>Hours</small>
+                    </li>
+                    <li>
+                      <span class="minutes"></span>
+                      <small>Minutes</small>
+                    </li>
+                    <li>
+                      <span class="seconds"></span>
+                      <small>seconds</small>
+                    </li>
+                  </ul>
+                </div>
+                <div class="ico-large login-logo">
+                  <!--img alt="ico" class="img-responsive " src="images/ico-large.png"-->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-copy login-copy  text-footer text-center page-section-1-ptb">2018 Arteryex,Inc All Rights Reserved </div>
+        </div>
+      </div>
+      </section>
+    </div>
+    </section>
+  </body>
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="js/jquery.mmenu.js"></script>
+  <script>
+    function getTimeRemaining(endtime) {
+        var t = Date.parse(endtime) - Date.parse(new Date());
+        var seconds = Math.floor((t / 1000) % 60);
+        var minutes = Math.floor((t / 1000 / 60) % 60);
+        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+        return {
+            'total': t,
+            'days': days,
+            'hours': hours,
+            'minutes': minutes,
+            'seconds': seconds
+        };
+    }
+
+    function initializeClock(id, endtime) {
+        var clock = document.getElementById(id);
+        var daysSpan = clock.querySelector('.days');
+        var hoursSpan = clock.querySelector('.hours');
+        var minutesSpan = clock.querySelector('.minutes');
+        var secondsSpan = clock.querySelector('.seconds');
+
+        function updateClock() {
+            var t = getTimeRemaining(endtime);
+
+            daysSpan.innerHTML = t.days;
+            hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+            minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+            secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+            if (t.total <= 0) {
+                clearInterval(timeinterval);
+            }
+        }
+
+        updateClock();
+        var timeinterval = setInterval(updateClock, 1000);
+    }
+
+    //var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+    var deadline = new Date(Date.parse(new Date(2018,8,1) ));
+    initializeClock('clockdiv', deadline);
+</script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function(){
+     $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('#back-to-top').fadeIn();
+            } else {
+                $('#back-to-top').fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        $('#back-to-top').click(function () {
+            $('#back-to-top').tooltip('hide');
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+        
+        $('#back-to-top').tooltip('show');
+
+});
+
+</script>
+  <script src="js/owl.carousel.js"></script>
+  <script>
+  $(document).ready(function() {
+      var owl = $(".scroll-img");
+      owl.owlCarousel({
+        itemsCustom : [
+          [0, 1],
+          [360, 2],
+          [600, 3],
+          [767, 4],
+          [1000, 5],
+          [1200, 6],
+          [1400, 6],
+          [1600, 6]
+        ],
+      navigation : false,
+      pagination : false,
+      loop:true,
+      autoplay:true,
+      autoplayTimeout:500,
+      autoplayHoverPause:true,
+navigationText: [
+        "<i class='fa fa-chevron-left'></i>",
+        "<i class='fa fa-chevron-right'></i>"]
+
+      });
+    });
+  
+    
+  
+  
+  
+</script>
+  <script src="js/side_menu.js"></script>
+</html>
