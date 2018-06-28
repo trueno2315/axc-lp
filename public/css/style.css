@@ -266,9 +266,10 @@ box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.16);
   padding: 20px 0;
   text-align: center;
   -webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
-margin: 10px 0;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 10px 0;
+  height: 260px;
 }
 .team-info h6 {
   margin-bottom: 0;
