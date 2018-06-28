@@ -19,7 +19,8 @@ var identification = require('./routes/identification');
 var sendether = require('./routes/sendether');
 var activate = require('./routes/activate');
 var logout = require('./routes/logout');
-
+var admin = require('./routes/admin');
+var admin_dashboard = require('./routes/admin_dashboard');
 
 var setUser = require('./setUser');
 
@@ -53,6 +54,8 @@ app.use('/identification', setUser, identification);
 app.use('/logout', logout);
 app.use('/sendether', setUser, sendether);
 app.use('/activate', activate);
+app.use('/admin', admin);
+app.use('/admin_dashboard', admin_dashboard);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
