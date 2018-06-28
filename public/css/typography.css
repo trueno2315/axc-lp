@@ -157,6 +157,11 @@ Page section margin padding
 	background: transparent url("../images/axc/top.axc.png") no-repeat scroll 0 0 / cover;
 }
 
+.parallax-window {
+  min-height: 400px;
+  background: transparent;
+}
+
 
 .double-bg{
 	
@@ -530,11 +535,11 @@ color: #ffffff;
 
 
 input[type="text"], input[type="email"], input[type="password"] {
-  background-color: #fff;
+  background-color: #adadb7;
   border: medium none;
   -webkit-border-radius: 30px;
--moz-border-radius: 30px;
-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
   color: #000;
   font-size: 15px;
   height: 42px;
@@ -542,6 +547,7 @@ border-radius: 30px;
   padding: 10px;
   width: 100%;
 }
+
 
 .top-logo {
   width: 400px;
