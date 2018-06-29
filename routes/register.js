@@ -42,8 +42,8 @@ router.post('/', function(req, res, next) {
     var mailOptions = {
     from    : 'info@arteryex.biz', // 送信元アドレス
     to      : req.body.email, // 送信するアドレス
-    subject : 'Arteryex ICO', // タイトル
-    text    : 'This is pre-Registration.\nPlease complete Registration via URL below\nhttp://localhost:3000/activate?activeHash='+ emailHash +''
+    subject : 'Welcome to Arteryex ICO', // タイトル
+    text    : 'This is pre-Registration.\nPlease complete Registration via URL below\nhttps://www.arteryex.com/activate?activeHash='+ emailHash +''
     };
     connection.query(emailExistsQuery, function(err, email) {
       var errormsg = email.length === 1;
