@@ -15,12 +15,10 @@
       <% if (typeof unVerifiedLists !== 'undefined') { %>
       <h1>未承認リスト(<%= unVerifiedLists.length %> 件)</h1>
       <% } %>
-        <% if (typeof unVerifiedLists !== 'undefined') { %>
-          <% for( var i in unVerifiedLists){ %>
             <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
+                  <th scope="col">UserId</th>
                   <th scope="col">First</th>
                   <th scope="col">Last</th>
                   <th scope="col">email</th>
@@ -29,22 +27,27 @@
                 </tr>
               </thead>
               <tbody>
+                  <% if (typeof unVerifiedLists !== 'undefined') { %>
+                    <% for( var i in unVerifiedLists){ %>
                 <form action="/admin_dashboard" method="post">
                 <tr>
                   <th scope="row"><input name="id" value="<%= unVerifiedLists[i].user_id %>"/></th>
                   <td><%= unVerifiedLists[i].firstname %></td>
                   <td><%= unVerifiedLists[i].lastname %></td>
                   <td><input name="email" value="<%= unVerifiedLists[i].email %>"/></td>
-                  <td><img src="../upload/tmp/<%= unVerifiedLists[i].id_image %>"</td>
+                  <td>
+                    <img class="img-thumbnail" src="../upload/tmp/<%= unVerifiedLists[i].id_image %>"<br>
+                    <a href="http://localhost:3000/upload/tmp/<%= unVerifiedLists[i].id_image %>">img</a> 
+                  </td>
                   <td>
                     <input type="submit" value="承認" />
                     <input name="deny" type="submit" value="deny"/>
                   </td>
                 </tr>
                 </form>
+                    <% } %>
+                  <% } %>
               </tbody>
             </table>
-          <% } %>
-        <% } %>
     </body>
   </html>
