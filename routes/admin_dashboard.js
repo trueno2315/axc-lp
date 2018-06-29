@@ -46,8 +46,18 @@ router.post('/', function(req, res, next) {
           }
           console.log('Message sent: ' + info.response);
         });
-        res.redirect('admin_dashboard/aiu');
+        var denyQuery = 'UPDATE users SET kyc = "0" where user_id = "' + userId + '"'
+        connection.query(denyQuery, function(err, rows) {
+          if(err) {
+              res.render('admin_dashboard/aiu');
+              console.log("STATUS:: something err when DB update");
+          } else {
+              res.redirect('admin_dashboard/aiu');
+              console.log("STATUS:: DenyQuery kyc = 0");
+          }
+        });
         console.log('STATUS::: UserID:'+ userId +' を否認しました.');
+
 　//認証ボタンが押された場合の処理ーーーーーーーーーーーーーーーーーーーーーー
     } else {
       var kycUpdateQuery = 'UPDATE users SET kyc = "2" where user_id = "' + userId + '"'
