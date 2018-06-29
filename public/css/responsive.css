@@ -169,7 +169,8 @@
 }
 
 .ui .navbar-collapse {
-  background-color: #133fde;
+  /*background-color: #133fde;*/
+  background: url(../images/axc/img-bg1.axc.png) no-repeat center fixed;
 
 }.ui .navbar-collapse .navbar-nav {
   background: transparent none repeat scroll 0 0;
@@ -239,8 +240,8 @@
   color: #fff !important;
 }
  .navbar-inverse .navbar-toggle {
-  background-color: #133fde;
-  border-color: #133fde;
+  background-color: #43178a;
+  border-color: #43178a;
 }
 .navbar-nav {
   background-color: #fff;
@@ -250,7 +251,7 @@
 }
 header {
   position: relative;
-  background: #fff;
+  background-image: url("../images/axc/img-bg2.axc.png");
 }
 .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
   background-color: #133fde;
@@ -382,6 +383,7 @@ footer .col-xs-4, footer .col-xs-2, footer .col-xs-6 {
   display: inline-block;
   padding: 17px 16px;
 }
+/*
 .admin_user_right {
   display: inline-block;
   float: none;
@@ -389,6 +391,7 @@ footer .col-xs-4, footer .col-xs-2, footer .col-xs-6 {
   vertical-align: middle;
   width: 100%;
 }
+*/
 .ui-content-body {
 
   padding: 0 0 0 0;
