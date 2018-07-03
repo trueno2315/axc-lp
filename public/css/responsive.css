@@ -280,12 +280,12 @@ header {
 
   display: none;
 }
-  .color1{ background-color:#fff;color: #43178a !important;}
-    .color2{ background-color:#fff; color:#43178a !important;}
-	  .color3{ background-color:#fff;  color:#43178a !important;}
-	    .color4{ background-color:#fff;  color:#43178a !important;}
-		  .color6{ background-color:#fff;  color:#43178a !important;}
-		    .color5{ background-color:#fff; color:#43178a !important;}
+  .color1{ background-color:#fff;}
+    .color2{ background-color:#fff;}
+	  .color3{ background-color:#fff;}
+	    .color4{ background-color:#fff;}
+		  .color6{ background-color:#fff;}
+		    .color5{ background-color:#fff;}
 
 }
  @media (max-width: 640px) {
