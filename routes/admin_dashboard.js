@@ -14,20 +14,24 @@ var transporter = nodemailer.createTransport( smtpTransport({
 }));
 
 router.get('/:aiu', function(req, res, next){
-    var unVerifiedListQuery = "SELECT user_id, email, firstname, lastname, id_image FROM users WHERE kyc=1";
-    connection.query(unVerifiedListQuery, function(err, unVerifiedLists){
-      if(!err){
-        res.render('admin_dashboard', {
-          unVerifiedLists: unVerifiedLists
+    if(req.session.user_id === 32){
+        var unVerifiedListQuery = "SELECT user_id, email, firstname, lastname, id_image FROM users WHERE kyc=1";
+        connection.query(unVerifiedListQuery, function(err, unVerifiedLists){
+          if(!err){
+            res.render('admin_dashboard', {
+              unVerifiedLists: unVerifiedLists
+            });
+          } else {
+            console.log(err);
+            res.render('admin_dashboard',{
+              title:'admin_dashboard',
+              result:"DBから未承認リストの取得に失敗"
+            });
+          }
         });
-      } else {
-        console.log(err);
-        res.render('admin_dashboard',{
-          title:'admin_dashboard',
-          result:"DBから未承認リストの取得に失敗"
-        });
-      }
-    });
+    } else {
+      res.redirect('/');
+    }
 });
 
 router.post('/', function(req, res, next) {
