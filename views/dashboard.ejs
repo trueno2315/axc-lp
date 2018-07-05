@@ -117,10 +117,12 @@
 
                     <div class="dashboard-space1">
                         <h2 class="theme-color mb-20">Identification(STEP1)</h2>
-                        <% if ( user.kyc == 0 ) { %>
-                          <% if (typeof savedid !== 'undefined') { %>
-                            <p class="error"><%= savedid %></p>
-                          <% } else { %>
+                        <% if ( user.kyc === 1 ) { %>
+                            <p class="error">In the process of Identification..<br>
+                              if you wait over 24 hours, Please contact us<br>
+                              mail:info@arteryex.biz
+                            </p>
+                          <% } else if( user.kyc === 0 ){ %>
                           <form action="/identification" method="POST" enctype="multipart/form-data">
                             <div class="form-group">
                               <label for="firstname">Firstname</label>
@@ -131,7 +133,7 @@
                               <input type="text" class="form-control id-input" name="lastname" placeholder="lastname" required>
                             </div>
                             <div class="form-group">
-                              <label for="file">input your Identification　card</label>
+                              <label for="file">input your Identification card</label>
                               <input type="file" name="id_image" accept="image/jpeg, image/png, image/jpg" required>
                             </div>
                             <div class="check">
@@ -143,13 +145,7 @@
                               <button type="submit" class="btn validate-btn">Validate</button>
                             </div>
                           </form>
-                          <% } %>
-                        <% } else if ( user.kyc == 1 ){ %>
-                          <p class="error">Checking...<br>
-                            if you wait over 24 hours, Please contact us<br>
-                            mail:info@arteryex.biz
-                          </p>
-                        <% } else {%>
+                        <% } else { %>
                           <p class="error">Authenticated</p>
                         <% } %>
                       </div>
