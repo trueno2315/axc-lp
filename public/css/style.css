@@ -243,10 +243,10 @@ box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.16);
   list-style-type: none;
   margin-bottom: 10px;
 }
-.token-allocate li.color1{ color:#43178a;}
-.token-allocate li.color2{ color:#43178a;}
-.token-allocate li.color3{ color:#7f8c8d;}
-.token-allocate li.color4{ color:#95a5a6;}
+.token-allocate li.color1{ color:#300dbe;}
+.token-allocate li.color2{ color:#585959;}
+.token-allocate li.color3{ color:#7f7f7f;}
+.token-allocate li.color4{ color:#a38ef5;}
 .token-allocate li.color5{ color:#bdc3c7;}
 .token-allocate li.color6{ color:#34495e;}
 
@@ -266,9 +266,10 @@ box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.16);
   padding: 20px 0;
   text-align: center;
   -webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
-margin: 10px 0;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 10px 0;
+  height: 260px;
 }
 .team-info h6 {
   margin-bottom: 0;

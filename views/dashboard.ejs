@@ -4,6 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dashboard</title>
+    <!--favicon-->
+    <link rel="icon" type="image/vnd.microsoft.icon" href="images/favicon.png">
     <!--bootstrap style-->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <!--animate style-->
@@ -69,108 +71,114 @@
                 <div class="color-wrap">
               <div class="row">
                 <div class="col-xs-12">
-                  <div class="info-bar mt-30 mb-20">
+                  <div class="info-bar mt-35 mb-20">
+                      <span class="text-white">softcap achievement rate</span>
                       <div class="w3-light-grey">
-                        <div class="w3-container w3-green w3-center" style="width:25%">25%</div>
+                        <div class="w3-container w3-green w3-center" style="width:10%">10%</div>
                       </div>
                   </div>
                   <div class="info-left">
-                    <span class="theme-color fw-3">Current Bonus: 15%</span>
+                    <span class="theme-color fw-3">Current Bonus: 20%</span><br>
+                    <span class="theme-color fw-3">AXC token address(don`t send your ETH to this address): 0x20b4fc8b1cc06b6c44315f5bb7f578131f7878ba</span>
                   </div>
                   <div class="info-right">
                     <span class="theme-color text-right">Next Bonus Shift: 11D 12H 43M 10s</span>
                   </div>
                 </div>
               </div>
+              <div class="dashboard-space1">
+                How to buy AXC
+                <li>Step1: Please identificate</li>
+                <li>Step2: Please register your wallet (don`t register exchanges wallet in here)</li>
+                <li>Step3: Send ETH to our crowdsales address then you will automatically get AXC</li>
+                <span style="    
+                  color: red;
+                  font-size: 12px;
+                  font-family: Meiryo UI;">
+                  this dashboard dosen`t have send ETH function, Please use your wallet app to send
+                </span>
+              </div>
               <div class="row">
                 <div class="col-md-7 mt-20 mb-10">
                   <ul class="wallet-details">
-                    <div class="dashboard-space1">
-                      <h2 class="theme-color mb-20">Token Info</h2>
+                    <div class="dashboard-space-crowdsaleinfo">
+                      <h2 class="theme-color mb-20">CrowdSale Info</h2>
                       <li class="theme-color1">
                         <span class="text-white">Rate: 1ETH = 12000AXC</span>
                       </li>
-                      <li
+                      <li>
                         <% if (user.kyc === 2) { %>
-                        <span class="text-white">Adress: 0x17b79de089b1e3793ffab74f553531464f6b102d</span>
+                        <span class="text-white">please waiting for crowdSale start</span>
                         <% } else { %>
-                        <span class="text-white">Adress: "After Identification, You can see."</span>
+                        <span class="text-white">CrowdSales Adress: "Please Identification"</span>
                         <% } %>
                       </li>
                     </div>
 
                     <div class="dashboard-space1">
-                      <h2 class="theme-color mb-20">Your Info</h2>
-                      <form action="/dashboard" method="POST">
-                        <li class="theme-color1">
-                          <h6>
-                            <i class="cc ETH"></i><span class="text-white">Your Ether Wallet</span>
-                          </h6>
-                          <input type="text" class="wallet-form" name="wallet" id="wallet" value= <%= user.wallet %> >
-                          <div class="dw">
-                            <button type="submit" class="btn regist-wallet-btn"><i class="fa fa-caret-right"></i>Register/Edit</button>
-                          </div>
-                        </li>
-                      </form>
-                      <form action="/sendether" method="POST">
-                        <li class="theme-color1">
-                            <span class="text-white"> Your Token Amount:
-                            <% if (typeof amount !== 'undefined') { %>
-                              <%= amount %>
-                            <% } %> AXC
-                            </span>
-                        </li>
-                        <div class="dw">
-                          <button type="submit" class="btn ck-amount-btn"><i class="fa fa-caret-right"></i>Check Amount</button>
-                        </div>
-                      </form>
-                      <!--form action="/sendether" method="POST"-->
-                        <li class="theme-color1">
-                            <span class="text-white"> Claim Refund
-                            </span>
-                        </li>
-                        <button type="submit" class="btn refund-btn">Refund</button>
-                      <!--/form-->
-                    </div>
+                        <h2 class="theme-color mb-20">Identification(STEP1)</h2>
+                        <% if ( user.kyc === 1 ) { %>
+                            <p class="error">In the process of Identification..<br>
+                              if you wait over 24 hours, Please contact us<br>
+                              mail:info@arteryex.biz
+                            </p>
+                          <% } else if( user.kyc === 0 ){ %>
+                          <form action="/identification" method="POST" enctype="multipart/form-data">
+                            <div class="form-group">
+                              <label for="firstname">Firstname</label>
+                              <input type="text" class="form-control id-input" name="firstname" placeholder="firstname" required>
+                            </div>
+                            <div class="form-group">
+                              <label for="lastname">Lastname</label>
+                              <input type="text" class="form-control id-input" name="lastname" placeholder="lastname" required>
+                            </div>
+                            <div class="form-group">
+                              <label for="file">input your Identification card</label>
+                              <input type="file" name="id_image" accept="image/jpeg, image/png, image/jpg" required>
+                            </div>
+                            <div class="check">
+                              <label>
+                                <input type="checkbox" required> Check
+                              </label>
+                            </div>
+                            <div class="admin-btn">
+                              <button type="submit" class="btn validate-btn">Validate</button>
+                            </div>
+                          </form>
+                        <% } else { %>
+                          <p class="error">Authenticated</p>
+                        <% } %>
+                      </div>
+
+
                   </ul>
                 </div>
                 <div class="col-md-5 mt-20 mb-10">
-                  <div class="dashboard-space1">
-                  <h2 class="theme-color mb-20">Identification</h2>
-                  <% if ( user.kyc == 0 ) { %>
-                    <% if (typeof savedid !== 'undefined') { %>
-                      <p class="error"><%= savedid %></p>
-                    <% } else { %>
-                    <form action="/identification" method="POST" enctype="multipart/form-data">
-                      <div class="form-group">
-                        <label for="firstname">Firstname</label>
-                        <input type="text" class="form-control id-input" name="firstname" placeholder="firstname" required>
-                      </div>
-                      <div class="form-group">
-                        <label for="lastname">Lastname</label>
-                        <input type="text" class="form-control id-input" name="lastname" placeholder="lastname" required>
-                      </div>
-                      <div class="form-group">
-                        <label for="file">input your Identification</label>
-                        <input type="file" name="id_image" accept="image/jpeg, image/png, image/jpg" required>
-                      </div>
-                      <div class="check">
-                        <label>
-                          <input type="checkbox" required> Check
-                        </label>
-                      </div>
-                      <div class="admin-btn">
-                        <button type="submit" class="btn validate-btn">Validate</button>
-                      </div>
+                  
+                <div class="dashboard-space1">
+                    <h2 class="theme-color mb-20">Your Wallet Info(STEP2)</h2>
+                    <form action="/dashboard" method="POST">
+                      <li class="theme-color1" style="list-style: none;">
+                        <h6>
+                          <i class="cc ETH"></i><span class="text-white">Your Ether Wallet</span>
+                        </h6>
+                        <input type="text" class="wallet-form" name="wallet" id="wallet" value= <%= user.wallet %> >
+                        <div class="admin-btn">
+                          <button type="submit" class="btn regist-wallet-btn"><i class="fa fa-caret-right"></i>Register/Edit</button>
+                        </div>
+                      </li>
+                      <span style="color: red">※ don`t register exchanges address here</span>
                     </form>
-                    <% } %>
-                  <% } else if ( user.kyc == 1 ){ %>
-                    <p class="error">Checking...</p>
-                  <% } else {%>
-                    <p class="error">Authenticated</p>
-                  <% } %>
+                    <!--form action="" method="POST">
+                      <li class="theme-color1">
+                          <span class="text-white"> Claim Refund
+                          </span>
+                      </li>
+                      <button type="submit" class="btn refund-btn">Refund</button>
+                    <form-->
+                  </div>
                 </div>
-                </div>
+                
               </div>
             </div>
           </div>

@@ -5,54 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin dashboard</title>
     <!--bootstrap style-->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <!--animate style-->
-    <link rel="stylesheet" type="text/css" href="css/hover-min.css" />
-    <link rel="stylesheet" type="text/css" href="css/animate.css" />
-    <!--themify style-->
-    <link rel="stylesheet" type="text/css" href="css/themify-icons.css" />
-    <link rel="stylesheet" href="css/modal-video.min.css">
-    <!--owl carousel style-->
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/owl.theme.css" />
-    <!--fonts style style-->
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/cryptofont.css" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
-    <!--bootstrap form helpers-->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-formhelpers.css" />
-    <!--typography style-->
-    <link rel="stylesheet" type="text/css" href="css/typography.css" />
-    <!--basic style-->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
   </head>
     <body>
       <h1>Hello Admin!</h1>
       <% if (typeof result !== 'undefined') { %>
       <h2><%= result %></h2>
       <% } %>
-
       <% if (typeof unVerifiedLists !== 'undefined') { %>
       <h1>未承認リスト(<%= unVerifiedLists.length %> 件)</h1>
       <% } %>
-        <ul>
-            <% if (typeof unVerifiedLists !== 'undefined') { %>
-              <% for( var i in unVerifiedLists){ %>
-              <li style="font-size: 30px">
-                <%= unVerifiedLists[i].firstname %>
-                <%= unVerifiedLists[i].lastname %>
-                <img src="../upload/tmp/<%= unVerifiedLists[i].id_image %>"/> <br/>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">UserId</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">email</th>
+                  <th scope="col">img</th>
+                  <th scope="col">action</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <% if (typeof unVerifiedLists !== 'undefined') { %>
+                    <% for( var i in unVerifiedLists){ %>
                 <form action="/admin_dashboard" method="post">
-                  <input name="id" value="<%= unVerifiedLists[i].user_id %>"/>
-                  <input name="email" value="<%= unVerifiedLists[i].email %>"/>
-                  <input type="submit" value="承認" style="font-size: 20px" />
-                  <input name="deny" type="submit" value="deny"/>
+                <tr>
+                  <th scope="row"><input name="id" value="<%= unVerifiedLists[i].user_id %>"/></th>
+                  <td><%= unVerifiedLists[i].firstname %></td>
+                  <td><%= unVerifiedLists[i].lastname %></td>
+                  <td><input name="email" value="<%= unVerifiedLists[i].email %>"/></td>
+                  <td>
+                    <img class="img-thumbnail" src="../upload/tmp/<%= unVerifiedLists[i].id_image %>"<br>
+                    <a href="http://localhost:3000/upload/tmp/<%= unVerifiedLists[i].id_image %>">img</a> 
+                  </td>
+                  <td>
+                    <input class="btn btn-primary" type="submit" value="承認" />
+                    <input class="btn btn-dark" name="deny" type="submit" value="deny"/>
+                  </td>
+                </tr>
                 </form>
-              </li>
-              <% } %>
-            <% } %>
-        </ul>
+                    <% } %>
+                  <% } %>
+              </tbody>
+            </table>
     </body>
   </html>
